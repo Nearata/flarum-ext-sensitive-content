@@ -1,0 +1,35 @@
+{
+    "name": "nearata/flarum-ext-sensitive-content",
+    "description": "Hide content to non-allowed groups.",
+    "keywords": [
+        "flarum"
+    ],
+    "type": "flarum-extension",
+    "license": "Unlicense",
+    "require": {
+        "flarum/core": "^1.7.0"
+    },
+    "authors": [
+        {
+            "name": "Nearata",
+            "email": "nearata@protonmail.com",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Nearata\\SensitiveContent\\": "src/"
+        }
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "Sensitive Content",
+            "category": "feature",
+            "icon": {
+                "name": "fas fa-eye-slash",
+                "color": "#fff",
+                "backgroundColor": "#2A4494"
+            }
+        }
+    }
+}
