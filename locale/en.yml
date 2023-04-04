@@ -1,7 +1,7 @@
 nearata-sensitive-content:
-  # For more details on the format
-  # Checkout https://docs.flarum.org/extend/i18n/#appendix-a-standard-key-format
   admin:
-    my_cool_key: My Cool Key
-
+    permissions:
+      view:
+        label: Can view sensitive content
   forum:
+    header_title: Sensitive Content

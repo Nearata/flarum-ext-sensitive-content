@@ -3,6 +3,8 @@
 namespace Nearata\SensitiveContent;
 
 use Flarum\Extend;
+use Nearata\SensitiveContent\Formatter\ConfigureBbcode;
+use Nearata\SensitiveContent\Formatter\RenderBbcode;
 
 return [
     (new Extend\Frontend('forum'))
@@ -14,4 +16,8 @@ return [
         ->css(__DIR__.'/less/admin.less'),
 
     new Extend\Locales(__DIR__.'/locale'),
+
+    (new Extend\Formatter)
+        ->configure(ConfigureBbcode::class)
+        ->render(RenderBbcode::class)
 ];
