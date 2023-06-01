@@ -10,16 +10,22 @@ use s9e\TextFormatter\Utils;
 
 class RenderBbcode
 {
-    public function __invoke(Renderer $renderer, &$context, string $xml, ServerRequestInterface $request)
+    public function __invoke(Renderer $renderer, &$context, string $xml, ServerRequestInterface $request = null): string
     {
-        $actor = RequestUtil::getActor($request);
-
-        if ($context instanceof CommentPost) {
-            if ($context->user_id === $actor->id) {
-                return $xml;
-            }
+        if (! $request) {
+            return $xml;
         }
 
-        return $actor->hasPermission('nearata-sensitive-content.view') ? $xml : Utils::removeTag($xml, 'SENSITIVE-CONTENT');
+        if (! ($context instanceof CommentPost)) {
+            return $xml;
+        }
+
+        $actor = RequestUtil::getActor($request);
+
+        if ($actor->id === $context->user_id) {
+            return $xml;
+        }
+
+        return $actor->can('nearata-sensitive-content.view') ? $xml : Utils::removeTag($xml, 'SENSITIVE-CONTENT');
     }
 }

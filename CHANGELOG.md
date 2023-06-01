@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - bump php to 8.0
 - bump flarum to 1.7
+- feat: export bbcode template to illuminate/view to allow overrides
+- fix: check if request is available when rendering
+- fix: css element overlaps
 
 ## [1.0.1] - 2023-04-05
 

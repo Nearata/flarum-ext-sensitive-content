@@ -17,5 +17,8 @@ return [
 
     (new Extend\Formatter)
         ->configure(ConfigureBbcode::class)
-        ->render(RenderBbcode::class)
+        ->render(RenderBbcode::class),
+
+    (new Extend\View)
+        ->namespace('nearata-sensitive-content', __DIR__.'/views')
 ];
