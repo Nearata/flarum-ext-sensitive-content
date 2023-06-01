@@ -10,6 +10,8 @@
 
 **NOTE**: only allowed groups can see this element block.
 
+in this example, only admins are allowed to see this
+
 ![preview](screenshot.png)
 
 ## Install
